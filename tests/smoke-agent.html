@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../src/medicalAgent.css" />
+    <title>就医整理冒烟</title>
+  </head>
+  <body>
+    <div id="host"></div>
+    <script type="module">
+      const records = [
+        { id: 'r1', childId: 'c1', originalAssetId: 'resp-1', documentDate: '2024-03-02', hospital: '市儿童医院', summary: '咳嗽三天', ocrText: '呼吸科 咳嗽三天', extractionErrorReason: null },
+        { id: 'r2', childId: 'c1', originalAssetId: 'bone-1', documentDate: '2024-11-01', hospital: '市骨科医院', summary: '摔倒后肿痛', ocrText: '骨科 左桡骨骨折', extractionErrorReason: null },
+        { id: 'r3', childId: 'c1', originalAssetId: 'undated-1', documentDate: null, hospital: '', summary: '', ocrText: '', extractionErrorReason: null },
+      ]
+      const fields = [
+        { recordId: 'r1', key: 'department', value: '呼吸科' },
+        { recordId: 'r1', key: 'diagnosis', value: '急性支气管炎' },
+        { recordId: 'r2', key: 'department', value: '骨科' },
+        { recordId: 'r2', key: 'diagnosis', value: '左桡骨骨折' },
+      ]
+      localStorage.setItem('banchengzhang:v01:medical', JSON.stringify({ records, fields, assets: [] }))
+      localStorage.setItem('banchengzhang:v01:f02', JSON.stringify({ events: [{ id: 'j1', childId: 'c1', title: '', body: '今晚又咳嗽了', transcript: '' }] }))
+      sessionStorage.setItem('bcz:agent:query', '看呼吸科')
+      const { mountMedicalAgent } = await import('../src/medicalAgent.js')
+      mountMedicalAgent(document.getElementById('host'), {
+        child: { id: 'c1', nickname: '小满' },
+        children: [{ id: 'c1', nickname: '小满' }],
+        switchChild() {},
+        navigate(path) { document.body.dataset.nav = path },
+      })
+      document.body.dataset.ready = '1'
+    </script>
+  </body>
+</html>

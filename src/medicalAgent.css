@@ -1,0 +1,148 @@
+.med-agent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 20px 32px;
+  color: var(--color-text-primary, #2b2521);
+  font-family: var(--font-family-sans, sans-serif);
+}
+
+.med-agent-title {
+  margin: 0;
+  font-family: var(--font-family-serif, "Songti SC", serif);
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.med-agent-child,
+.med-agent-note,
+.med-agent-empty {
+  margin: 0;
+  color: var(--color-text-secondary, #574d44);
+  line-height: 1.6;
+}
+
+.med-agent-note {
+  font-size: 14px;
+}
+
+.med-agent-form,
+.med-agent-switch {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.med-agent-form .input {
+  flex: 1;
+  min-width: 0;
+}
+
+.med-agent-refusal {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--color-state-warn-tint, #f8edd8);
+  color: var(--color-state-warn, #8a5a16);
+  line-height: 1.6;
+}
+
+.med-agent-safety,
+.med-agent-undated,
+.med-agent-journal {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-line-hairline, #e6dccc);
+}
+
+.med-agent-safety {
+  flex-direction: row;
+  gap: 12px;
+}
+
+.med-agent-safety-item {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--color-bg-surface, #fffcf6);
+}
+
+.med-agent-safety-item h3,
+.med-agent-undated h2,
+.med-agent-journal h2 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.med-agent-safety-item p {
+  margin: 0;
+}
+
+.med-agent-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.med-agent-node details {
+  border-radius: 12px;
+  background: var(--color-bg-surface, #fffcf6);
+  padding: 10px 12px;
+}
+
+.med-agent-node.is-low details {
+  background: var(--color-bg-sunken, #efe7da);
+}
+
+.med-agent-node.is-unknown details {
+  opacity: 0.8;
+}
+
+.med-agent-node summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.med-agent-node-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.med-agent-quote {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.med-agent-link {
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--color-accent-base, #8c4a33);
+  text-align: left;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.med-agent-tag {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--color-accent-tint, #f6e7df);
+  color: var(--color-accent-strong, #733b27);
+  font-size: 12px;
+}
+
+.med-agent-journal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
