@@ -1,0 +1,10 @@
+{
+  "name": "banchengzhang",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:verify:medical-same-name": "node tests/verify-medical-same-name.mjs",
+    "test:verify:medical-field-merge": "node tests/verify-medical-field-merge.mjs",
+    "test:verify:ai-proxy": "node tests/verify-ai-proxy.mjs"
+  }
+}
